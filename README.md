@@ -163,29 +163,52 @@ By executing the provided scripts, this project yields high-impact findings tail
 ---
 
 ## 📂 Repository Structure
+```
 sql-exploratory-data-analysis-project/
 │
-├── .gitignore                                   # Git ignore rules for temp files, secrets, etc.
-├── LICENSE                                      # MIT License file
-├── README.md                                    # Project overview, instructions, and insights
+├── 📁 datasets/
+│ ├── 📄 DataWarehouseAnalytics.bak
+│ └── 📁 csv_files/
+│ ├── bronze.crm_cust_info.csv
+│ ├── bronze.crm_prd_info.csv
+│ ├── bronze.crm_sales_details.csv
+│ ├── bronze.erp_cust_az12.csv
+│ ├── bronze.erp_loc_a101.csv
+│ ├── bronze.erp_px_cat_g1v2.csv
+│ ├── gold.dim_customers.csv
+│ ├── gold.dim_products.csv
+│ ├── gold.fact_sales.csv
+│ ├── gold.report_customers.csv
+│ ├── gold.report_products.csv
+│ ├── silver.crm_cust_info.csv
+│ ├── silver.crm_prd_info.csv
+│ ├── silver.crm_sales_details.csv
+│ ├── silver.erp_cust_az12.csv
+│ ├── silver.erp_loc_a101.csv
+│ └── silver.erp_px_cat_g1v2.csv
 │
-├── datasets/                                    # Folder for raw datasets
-│   └── csv_files/                               # Subfolder containing CSV data files
-│       ├── customers.csv                        # Customer profiles (ID, name, birthdate, location, etc.)
-│       ├── products.csv                         # Product catalog (ID, name, category, price, cost)
-│       └── sales.csv                            # Sales transactions (order ID, date, product ID, quantity, price)
+├── 📁 project_flow/
+│ └── Project_Flow.png
 │
-├── project_flow/                                # Folder for project diagrams and visuals
-│   └── Project_Flow.png                         # PNG diagram illustrating the EDA and analytics workflow
+├── 📁 scripts/
+│ ├── 00_init_database.sql
+│ ├── 01_database_exploration.sql
+│ ├── 02_dimensions_exploration.sql
+│ ├── 03_date_range_exploration.sql
+│ ├── 04_measures_exploration.sql
+│ ├── 05_magnitude_analysis.sql
+│ ├── 06_ranking_analysis.sql
+│ ├── 07_change_over_time_analysis.sql
+│ ├── 08_cumulative_analysis.sql
+│ ├── 09_performance_analysis.sql
+│ ├── 10_data_segmentation.sql
+│ ├── 11_part_to_whole_analysis.sql
+│ ├── 12_report_customers.sql
+│ └── 13_report_products.sql
 │
-└── scripts/                                     # Folder for all SQL analysis scripts
-    ├── 01_changes_over_time.sql                 # SQL for year/month trends and seasonality analysis
-    ├── 02_cumulative_analysis.sql               # SQL for running totals and moving averages
-    ├── 03_performance_analysis.sql              # SQL for KPIs and YoY comparisons using LAG
-    ├── 04_part_to_whole.sql                     # SQL for proportional analysis by category
-    ├── 05_data_segmentation.sql                 # SQL for customer and product segmentation with CASE
-    ├── 06_customer_report.sql                   # SQL for comprehensive customer 360° report (AOV, recency, etc.)
-    └── 07_product_report.sql                    # SQL for product profitability and ranking report
+├── 📄 LICENSE
+└── 📄 README.md
+```
 
 **Pro Tip**: Each script includes detailed comments, expected outputs, and performance notes. Run them sequentially after data import for best results.
 
